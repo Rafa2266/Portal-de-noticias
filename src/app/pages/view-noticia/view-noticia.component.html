@@ -1,0 +1,18 @@
+<div class="container row">
+    <div class="col-12 my-3">
+        <a class="d-md-block d-none" style="font-size:19px;" href="../lista_noticias"><em class="fa fa-angle-left" ></em> Voltar para a página inicial</a>
+        <a class="d-block d-md-none" style="font-size:15px;" href="../lista_noticias"><em class="fa fa-angle-left" ></em> Voltar para a página inicial</a>
+    </div>
+    <div class="col-12">
+
+        <h1 class="text-center mb-4 d-md-block d-none">{{noticia.titulo}}</h1>
+        <h2 class="text-center mb-4 d-block d-md-none">{{noticia.titulo}}</h2>
+        <div class="">
+            <img class="card-img" style="max-height: 600px;" src={{noticia.img_url}}>
+        </div>
+        <div class="mt-3">
+            <p style="font-size: 18px;">{{noticia.texto}}</p>
+            <p style="font-size: 18px;">Data de criação: {{noticia.dt_criacao| date:'dd/MM/yyyy'}}</p>
+        </div>
+    </div>
+</div>

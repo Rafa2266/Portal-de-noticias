@@ -1,0 +1,41 @@
+<h2 class="my-3">Notícias</h2>
+<hr class="w-100" style="border: 1px solid #797777;">
+<div class="row d-none d-md-flex">
+    <div class="col-1 text-center mb-3">
+        <button *ngIf="carroselMinimo>0" (click)="noticiaAnterior();" class="btn btn-primary "><em style="font-size:25px;" class="fa fa-angle-left"></em></button>
+    </div>
+    <div class="col-10 row ">
+        <div class="col-4 card bg-gray " style="cursor :pointer;" *ngFor="let noticia of noticiasCarrosel ">
+            <div class="card-header " [routerLink]="['../view_noticia/' + noticia.cod_noticia]">
+                <h4>{{noticia.titulo}}</h4>
+            </div>
+            <div class="card-body" [routerLink]="['../view_noticia/' + noticia.cod_noticia]">
+                <div class="align-self-lg-start">
+                    <img class="card-img " src={{noticia.img_url}}>
+                </div>
+                <div class=" mt-3 ">
+                    <p>{{noticia.resumo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-1 text-center mb-3">
+        <button *ngIf="noticias.length>carroselMaximo" (click)="proximaNoticia();" class="btn btn-primary ml-3"><em style="font-size:25px;" class="fa fa-angle-right"></em></button>
+    </div>
+</div>
+<div class="row d-md-none d-block">
+
+    <div class="col-12 card bg-gray " style="cursor :pointer;" *ngFor="let noticia of noticias">
+        <div class="card-header " [routerLink]="['../view_noticia/' + noticia.cod_noticia]">
+            <h5>{{noticia.titulo}}</h5>
+        </div>
+        <div class="card-body" [routerLink]="['../view_noticia/' + noticia.cod_noticia]">
+            <div class="align-self-lg-start">
+                <img class="card-img " src={{noticia.img_url}}>
+            </div>
+            <div class=" mt-3 ">
+                <p>{{noticia.resumo}}</p>
+            </div>
+        </div>
+    </div>
+</div>
